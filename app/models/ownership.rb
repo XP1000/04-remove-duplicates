@@ -8,7 +8,6 @@ class Ownership < ApplicationRecord
     select("ownerships.*, rubygems.name")
       .left_joins(rubygem: :versions)
       .where(versions: { indexed: true })
-      .distinct
       .order("rubygems.name ASC")
   end
 
