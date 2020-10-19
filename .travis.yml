@@ -8,7 +8,6 @@ cache:
 
 rvm:
   - 2.6.6
-  - ruby-head
 
 addons:
   apt:
@@ -47,11 +46,4 @@ script:
   - script/build_docker.sh
 
 env:
-  - RUBYGEMS_VERSION=2.6.10
   - RUBYGEMS_VERSION=latest
-
-matrix:
-  allow_failures:
-    - env: "RUBYGEMS_VERSION=latest"
-    - rvm: ruby-head
-  fast_finish: true
